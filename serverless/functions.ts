@@ -20,7 +20,27 @@ const functions: AWS["functions"] = {
                 }
             }
         ]
-    }
+    },
+    message: {
+        handler: "src/functions/message/index.handler",
+        events: [
+            {
+                websocket: {
+                    route: "message",
+                }
+            }
+        ]
+    },
+    disconnect: {
+        handler: "src/functions/disconnect/index.handler",
+        events: [
+            {
+                websocket: {
+                    route: "$disconnect",
+                }
+            }
+        ]
+    },
 };
 
 export default functions;
