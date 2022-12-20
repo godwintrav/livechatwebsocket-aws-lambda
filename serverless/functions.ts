@@ -19,7 +19,7 @@ const functions: AWS["functions"] = {
                 stream: {
                     type: 'dynamodb',
                     arn: {
-                        "Fn::GetAtt": ["reminderTable", "StreamArn"],
+                        "Fn::GetAtt": ["roomConnectionTable", "StreamArn"],
                     },
                     filterPatterns: [{ eventName: ["REMOVE"] }],
                 },

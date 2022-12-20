@@ -7,7 +7,7 @@ export const handler = async (event: APIGatewayProxyEvent) => {
     try {
 
         const body = JSON.parse(event.body);
-        const tableName = process.env.reminderTable;
+        const tableName = process.env.roomConnectionTable;
         const { email, phoneNumber, reminder, reminderDate } = body;
 
         const validationErrors = validateInputs({ email, phoneNumber, reminder, reminderDate });

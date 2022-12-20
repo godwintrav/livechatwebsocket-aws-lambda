@@ -1,10 +1,10 @@
 import type { AWS } from '@serverless/typescript';
 
 const dynamoResources: AWS['resources']['Resources'] = {
-    reminderTable: {
+    roomConnectionTable: {
         Type: "AWS::DynamoDB::Table",
         Properties: {
-            TableName: '${self:custom.reminderTable}',
+            TableName: '${self:custom.roomConnectionTable}',
             AttributeDefinitions: [
                 {
                     AttributeName: "id",
@@ -26,15 +26,6 @@ const dynamoResources: AWS['resources']['Resources'] = {
                 },
             ],
             BillingMode: 'PAY_PER_REQUEST',
-
-            StreamSpecification: {
-                StreamViewType: 'OLD_IMAGE'
-            },
-
-            TimeToLiveSpecification: {
-                AttributeName: "TTL",
-                Enabled: true,
-            },
 
             GlobalSecondaryIndexes: [
                 {

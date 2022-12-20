@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid';
 export const handler = async (event: APIGatewayProxyEvent) => {
     try {
 
-        const tableName = process.env.reminderTable;
+        const tableName = process.env.roomConnectionTable;
 
         const { userId } = event.pathParameters || {};
 
