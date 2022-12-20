@@ -1,7 +1,6 @@
 import { APIGatewayProxyEvent } from "aws-lambda";
 import { formatJSONResponse } from "@libs/apiGateway";
 import { dynamo } from "@libs/dynamo";
-import { v4 as uuid } from 'uuid';
 import { UserConnectionRecord } from "src/types/dynamo";
 import { websocket } from "@libs/websocket";
 
