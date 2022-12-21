@@ -47,7 +47,8 @@ export const handler = async (event: APIGatewayProxyEvent) => {
         await websocket.send({
             data: {
                 message: `You are now connected to room ${roomCode}`,
-                type: 'info'
+                type: 'info',
+                endpoint: `https://${domainName}/${stage}`
             },
             connectionId,
             domainName,

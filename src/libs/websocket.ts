@@ -30,6 +30,7 @@ export const websocket = {
             message?: string;
             type?: string;
             from?: string;
+            endpoint?: string;
 
         };
         connectionId: string;
